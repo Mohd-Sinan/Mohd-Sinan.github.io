@@ -1,0 +1,161 @@
+:root{
+  --prime-color:#ED266E;
+  --sec-color:#DD0772;
+  --prime2-col:#00CB4C;
+  --background-color: #564147;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  min-height: 100vh;
+  overscroll-behavior: none;
+  overflow: hidden;
+}
+#ui{
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform: translateX(-50%);
+  display:flex;
+  flex-direction: row;
+  width:max(20%,em);
+  justify-content: space-around;
+  padding: .5em;
+  background: var(--background-color);
+  border-radius: 2em;
+}
+#ui:before,
+#ui:after{
+  content: '';
+  position: absolute;
+  height:4em; 
+  width:4em;
+  z-index:-1;
+  border-radius: 50%;
+}
+#ui:before{
+  bottom:0;
+  box-shadow: 2em 2em 0 var(--background-color);
+  right:100%;
+  }
+#ui:after{
+  bottom: 0;
+  box-shadow: -2em 2em 0 var(--background-color);
+  left: 100%;
+}
+#ui .options{
+  position: relative;
+  height:4em;
+  width:4em;
+  margin:.5em;
+  pointer-events: auto;
+  border-radius: .5em;
+}
+.run{
+      --prime-color:#ED266E;
+      --sec-color:#DD0772;
+      background: none;
+      --prime2-col:#F73974;
+}
+.range input{
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  outline: none;
+  position: absolute;
+  width:5em;
+  top:-80%;
+  height:.3em;
+  left:50%;
+  border-radius: .5em;
+  opacity: 0;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.range output{
+  pointer-events: none;
+    position: absolute;
+    top:calc(-80% - 2em);
+    left:50%;
+    color: white;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    padding:.3em .45em;
+    background:
+rgba( 255, 255, 255, 0 );
+box-shadow:
+0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter:
+blur( 1px );
+-webkit-backdrop-filter:
+blur( 1px );
+border-radius:
+10px;
+border:
+1px solid rgba( 255, 255, 255, 0.18 );
+}
+.range.active input,.range.active output{
+  pointer-events: auto;
+  opacity:1;
+}
+.range.active span{
+  opacity:0;
+}
+.range input::-webkit-slider-thumb{
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: .9em; /* Set a specific slider handle width */
+  height: 1.5em; /* Slider handle height */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 2px rgba(0,0,0,.8),
+  inset -2px -1px 2px rgba(0,0,0,.4)
+}
+.util{
+  background-color: transparent;
+  text-align: center;
+}
+#pause{
+  opacity: 0;
+}
+.run.active{
+  --prime-color:#00CC00;
+  --sec-color:#17C405;
+  --prime2-col:#00CB4C;
+}
+.run.active svg #play{
+  opacity:0;
+}
+.run.active svg #pause{
+  opacity:1;
+}
+svg{
+  pointer-events: none;
+}
+.util.active{
+  background:rgba(0,0,0,.2);
+}
+
+.util span{
+  position: absolute;
+  color:#E9E9E9;
+  font-family: Monaco,monospace;
+  font-weight: bold;
+  pointer-events: none;
+  bottom: 0;
+  left:.1em;
+  text-shadow: .1em .1em .1em rgba(0,0,0,.5);
+}
+button{
+  display: block;
+  border:none;
+  outline:none;
+}
+#speed{
+  background: linear-gradient(to right,var(--prime-color) 0%, var(--prime-color) 100%, white 100%, white 100%)
+}
+#zoom{
+  background: linear-gradient(to right, var(--prime-color) 0%, var(--prime-color) 33.33%, white 33.33%, white 100%)
+}
