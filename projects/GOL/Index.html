@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="title" content="Convay's Game Of Life Simulator">
+  <meta name="description" content="An intuitive way to experience convay's game of life">
+  <title>Convay's game of life</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="./favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <script defer type="text/javascript" src="./js/bundle.js"></script>
+</head>
+<body>
+ <div id="ui">
+   <button type="button" class="options run"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
+     <path style="fill:var(--prime2-col);" d="M496,248c0,136.8-111.2,248-248,248S0,384.8,0,248S111.2,0,248,0S496,111.2,496,248z" />
+     <path style="fill:var(--sec-color);" d="M248,0c136.8,0,248,111.2,248,248S384.8,496,248,496" />
+     <path style="fill:var(--prime-color);" d="M72.8,72.8c96.8-96.8,253.6-96.8,350.4,0s96.8,253.6,0,350.4" />
+     <g id="pause">
+       <path style="fill:var(--sec-color);" d="M188,192c-12,0-20,9.6-20,20.8v116c0,12,8,21.6,20,21.6s20-9.6,20-21.6v-116
+   		C208,201.6,200,192,188,192z" />
+       <path style="fill:var(--sec-color);" d="M308,192c-12,0-20,9.6-20,20.8v116c0,12,8,21.6,20,21.6s20-9.6,20-21.6v-116
+   		C328,201.6,320,192,308,192z" />
+       <path style="fill:#FFFFFF;" d="M188,168.8c-12,0-20,9.6-20,21.6v116c0,12,8,21.6,20,21.6s20-9.6,20-21.6V189.6
+   		C208,178.4,200,168.8,188,168.8z" />
+       <path style="fill:#FFFFFF;" d="M308,168.8c-12,0-20,9.6-20,21.6v116c0,12,8,21.6,20,21.6s20-9.6,20-21.6V189.6
+   		C328,178.4,320,168.8,308,168.8z" />
+     </g>
+     <g id="play">
+       <path style="fill:var(--sec-color);" d="M212.8,360.8c-1.6,0-4-0.8-5.6-1.6c-4-1.6-7.2-6.4-7.2-10.4V199.2c0-4,3.2-8.8,7.2-10.4
+   	c4-1.6,8.8-1.6,12.8,0.8l101.6,75.2c3.2,2.4,4.8,5.6,4.8,9.6s-1.6,7.2-4.8,9.6L220,359.2C217.6,360,215.2,360.8,212.8,360.8z" />
+       <path style="fill:#FFFFFF;" d="M212.8,334.4c-1.6,0-4-0.8-5.6-1.6c-4-1.6-7.2-6.4-7.2-10.4V172.8c0-4,3.2-8.8,7.2-10.4
+   	c4-1.6,8.8-1.6,12.8,0.8l101.6,75.2c3.2,2.4,4.8,5.6,4.8,9.6c0,4-1.6,7.2-4.8,9.6L220,332.8C217.6,333.6,215.2,334.4,212.8,334.4z" />
+     </g>
+   </svg></button>
+   <button type="button" class="options util range"><span id="speedinfo">2x</span><svg viewBox="0 -2 48 46" width="90%" fill="none" xmlns="http://www.w3.org/2000/svg">
+     <path id="meter" d="M30.2972 18.7786C30.2972 18.7786 27.0679 27.8808 25.5334 29.4699C23.9988 31.0591 21.4665 31.1033 19.8774 29.5687C18.2882 28.0341 18.244 25.5018 19.7786 23.9127C21.3132 22.3236 30.2972 18.7786 30.2972 18.7786Z" fill="#93728D" stroke="var(--sec-color)" stroke-width="4" stroke-linejoin="round" />
+     <path d="M38.8492 38.8492C42.6495 35.049 45 29.799 45 24C45 12.402 35.598 3 24 3C12.402 3 3 12.402 3 24C3 29.799 5.35051 35.049 9.15076 38.8492" stroke="var(--prime-color)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+     <path d="M24 4V8" stroke="var(--prime-color)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+     <path d="M38.8454 11.1421L35.7368 13.6593" stroke="var(--prime-color)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+     <path d="M42.5225 27.2328L38.6251 26.333" stroke="var(--prime-color)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+     <path d="M5.47749 27.2328L9.37497 26.333" stroke="var(--prime-color)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+     <path d="M9.15463 11.1421L12.2632 13.6593" stroke="var(--prime-color)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /></svg><input type="range" name="" id="speed" min="1" max="12" value="12"/><output>2x</output></button>
+   <button type="button" class="options util range" id="scale"><span id="zoominfo">1x</span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 -1 25 26" style="enable-background:new 0 0 24 24;" width="90%"xml:space="preserve">
+		<path stroke="var(--sec-color)" stroke-width="1" fill="var(--prime-color)" d="M22,19.1L17.9,15c1-1.4,1.5-3,1.5-4.8c0-1.1-0.2-2.2-0.7-3.3c-0.4-1-1-1.9-1.8-2.7c-0.8-0.8-1.7-1.4-2.7-1.8
+			c-1-0.4-2.1-0.7-3.3-0.7C9.8,1.8,8.7,2,7.7,2.4c-1,0.4-1.9,1-2.7,1.8C4.2,5,3.6,5.9,3.2,6.9C2.7,8,2.5,9,2.5,10.2
+			c0,1.1,0.2,2.2,0.7,3.3c0.4,1,1,1.9,1.8,2.7c0.8,0.8,1.7,1.4,2.7,1.8c1,0.4,2.1,0.7,3.3,0.7c1.8,0,3.4-0.5,4.8-1.5l4.1,4.1
+			c0.3,0.3,0.6,0.5,1.1,0.5c0.4,0,0.8-0.2,1.1-0.5c0.3-0.3,0.5-0.7,0.5-1.1C22.4,19.7,22.3,19.4,22,19.1z M14.7,14
+			c-1.1,1.1-2.3,1.6-3.8,1.6c-1.5,0-2.7-0.5-3.8-1.6c-1.1-1.1-1.6-2.3-1.6-3.8c0-1.5,0.5-2.7,1.6-3.8c1.1-1.1,2.3-1.6,3.8-1.6
+			c1.5,0,2.7,0.5,3.8,1.6c1.1,1.1,1.6,2.3,1.6,3.8C16.3,11.7,15.8,12.9,14.7,14z"/>
+</svg>
+<input type="range" name="" id="zoom" min="5" max="20" value="10"/><output>1x</output></button>
+ </div>
+</body>
+</html>
